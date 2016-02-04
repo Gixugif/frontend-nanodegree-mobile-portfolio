@@ -403,11 +403,9 @@ var pizzaElementGenerator = function(i) {
 var resizePizzas = function(size) {
 // resizePizzas(size) is called when the slider in the "Our Pizzas" section of the website moves.
 
-
-
-    // TODO: change to 3 sizes? no more xl?
-    // Changes the slider value to a percent width
   function sizeSwitcher (size) {
+  //change size of pizzas based on %
+
     window.performance.mark("mark_start_resize")
     var pizzaSize = document.getElementById("pizzaSize")
 
@@ -491,6 +489,7 @@ function updatePositions() {
               Math.sin((scroll / 1250) + (2 % 5)),
               Math.sin((scroll / 1250) + (3 % 5)),
               Math.sin((scroll / 1250) + (4 % 5))]
+  // precalculate some values for moving pizzas
 
   for (var i = 0; i < items.length; i++) {
     var val = items[i].basicLeft + 100 * phase[j % 4] - halfWindow + "px"
